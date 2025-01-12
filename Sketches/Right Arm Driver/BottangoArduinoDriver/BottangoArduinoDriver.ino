@@ -1,6 +1,6 @@
 #include "src/BottangoCore.h"
 #include "src/BasicCommands.h"
-#include "GeneratedCommandStreams.h"  // Include the generated animation code from Bottango
+// #include "GeneratedCommandStreams.h"  // Include the generated animation code from Bottango
 
 #define SERIAL1_TX_PIN      33  //  // Serial 1 Tx Pin
 #define SERIAL1_RX_PIN      25 //  // Serial 1 Rx Pin
@@ -32,7 +32,7 @@ void loop() {
 
 // Function to process the serial command and trigger actions
 void processSerialCommand(String command) {
-  Serial.println("Received command: " + command);  // Debugging print
+  // Serial.println("Received command: " + command);  // Debugging print
     if (command.startsWith(":a") || (command.startsWith(":A"))) {
       String animationName = command.substring(2);  // Extract animation name (e.g., "Wave")
       Serial.println("Animation Name: " + animationName);  // Debugging print
