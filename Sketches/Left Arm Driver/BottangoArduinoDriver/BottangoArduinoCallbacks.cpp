@@ -67,8 +67,8 @@ namespace Callbacks
         char effectorIdentifier[9];
         effector->getIdentifier(effectorIdentifier, 9);
 
-        //Right Arm Driver
-        if ((strcmp(effectorIdentifier, "TorsoID") == 0) || (strcmp(effectorIdentifier, "HeadID") == 0) || (strcmp(effectorIdentifier, "LeftID") == 0))
+        //Left Arm Driver
+        if ((strcmp(effectorIdentifier, "TorsoID") == 0) || (strcmp(effectorIdentifier, "HeadID") == 0) || (strcmp(effectorIdentifier, "RightID") == 0))
         {
           Error::reportError_InvalidPin();
         }

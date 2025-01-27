@@ -2,6 +2,7 @@
 #include "src/AbstractEffector.h"
 #include "src/Log.h"
 #include "src/Outgoing.h"
+#include "src/Errors.h"
 
 namespace Callbacks
 {
@@ -63,14 +64,14 @@ namespace Callbacks
     {
         // example, turn on built in LED if effector registered with identifier "1";
 
-        // char effectorIdentifier[9];
-        // effector->getIdentifier(effectorIdentifier, 9);
+        char effectorIdentifier[9];
+        effector->getIdentifier(effectorIdentifier, 9);
 
-        // if (strcmp(effectorIdentifier, "1") == 0)
-        // {
-        //     pinMode(LED_BUILTIN, OUTPUT);
-        //     digitalWrite(LED_BUILTIN, HIGH);
-        // }
+        //Torso Driver
+        if ((strcmp(effectorIdentifier, "RightID") == 0) || (strcmp(effectorIdentifier, "HeadID") == 0) || (strcmp(effectorIdentifier, "LeftID") == 0))
+        {
+          Error::reportError_InvalidPin();
+        }
     }
 
     // called by an effector when deregistered, before deregistration is complete
